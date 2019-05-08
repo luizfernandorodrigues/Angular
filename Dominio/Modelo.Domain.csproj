@@ -5,7 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Dominio.Modelo\Modelo.Cadastro\CadastroIniciais\" />
+    <Compile Remove="Domain.Modelo\Cadastros\CadastroIniciais\**" />
+    <EmbeddedResource Remove="Domain.Modelo\Cadastros\CadastroIniciais\**" />
+    <None Remove="Domain.Modelo\Cadastros\CadastroIniciais\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Domain.Contrato\" />
   </ItemGroup>
 
   <ItemGroup>
