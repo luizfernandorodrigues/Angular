@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Modelo.Domain.Dominio.Modelo;
+using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Domain.Dominio.Modelo
 {

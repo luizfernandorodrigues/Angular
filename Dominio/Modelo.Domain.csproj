@@ -5,14 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Dominio.Modelo\Modelo.Cadastro\CadastroIniciais\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Dominio.Modelo\Modelo.Cadastro\Compras\" />
-    <Folder Include="Dominio.Modelo\Modelo.Cadastro\FinanceiroReceber\" />
-    <Folder Include="Dominio.Modelo\Modelo.Cadastro\FinanceiroPagar\" />
-    <Folder Include="Dominio.Modelo\Modelo.Cadastro\Venda\" />
+    <Compile Remove="Dominio.Modelo\**" />
+    <EmbeddedResource Remove="Dominio.Modelo\**" />
+    <None Remove="Dominio.Modelo\**" />
   </ItemGroup>
 
 </Project>
