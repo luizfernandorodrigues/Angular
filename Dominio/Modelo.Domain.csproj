@@ -5,11 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Dominio.Modelo\Modelo.Cadastro\CadastroIniciais\" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="8.3.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation.AspNetCore" Version="8.3.0" />
+    <Folder Include="Dominio.Modelo\Modelo.Cadastro\Compras\" />
+    <Folder Include="Dominio.Modelo\Modelo.Cadastro\FinanceiroReceber\" />
+    <Folder Include="Dominio.Modelo\Modelo.Cadastro\FinanceiroPagar\" />
+    <Folder Include="Dominio.Modelo\Modelo.Cadastro\Venda\" />
   </ItemGroup>
 
 </Project>
