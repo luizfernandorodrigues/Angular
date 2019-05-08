@@ -5,17 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Domain.Modelo\Cadastros\CadastroIniciais\**" />
-    <EmbeddedResource Remove="Domain.Modelo\Cadastros\CadastroIniciais\**" />
-    <None Remove="Domain.Modelo\Cadastros\CadastroIniciais\**" />
+    <Folder Include="Dominio.Modelo\Modelo.Cadastro\CadastroIniciais\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Domain.Contrato\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="FluentValidation.AspNetCore" Version="8.3.0" />
+    <Folder Include="Dominio.Modelo\Modelo.Cadastro\Compras\" />
+    <Folder Include="Dominio.Modelo\Modelo.Cadastro\FinanceiroReceber\" />
+    <Folder Include="Dominio.Modelo\Modelo.Cadastro\FinanceiroPagar\" />
+    <Folder Include="Dominio.Modelo\Modelo.Cadastro\Venda\" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,8 @@
-﻿namespace Domain.Dominio.Modelo
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Domain.Dominio.Modelo
 {
     public class Pais : DominioAbstract
     {
