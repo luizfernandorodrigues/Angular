@@ -1,9 +1,8 @@
-﻿using Modelo.Domain.Dominio.Modelo;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Domain.Dominio.Modelo
+namespace Modelo.Domain.Entidades.CadastrosIniciais
 {
-    public class Pais : DominioAbstract
+    public class Pais : EntidadeAbstrata
     {
         public string Nome { get; set; }
         public string Codigo { get; set; }

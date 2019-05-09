@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Modelo.Domain.Dominio.Modelo
+namespace Modelo.Domain.Entidades
 {
-    public abstract class DominioAbstract
+    public abstract class EntidadeAbstrata
     {
         public Guid Ukey { get; set; }
         public DateTime TimesTamp { get; set; }

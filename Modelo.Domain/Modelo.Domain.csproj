@@ -5,9 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Dominio.Modelo\**" />
-    <EmbeddedResource Remove="Dominio.Modelo\**" />
-    <None Remove="Dominio.Modelo\**" />
+    <Folder Include="Interfaces\" />
   </ItemGroup>
 
 </Project>
