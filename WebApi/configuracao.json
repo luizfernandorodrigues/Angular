@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "ConexaoBanco": "Data Source=LUIZFERNANDO\\SQLEXPRESS;Initial Catalog=WebApi;Persist Security Info=True;User ID=sa;Password=mygod&1000"
+  }
+}
