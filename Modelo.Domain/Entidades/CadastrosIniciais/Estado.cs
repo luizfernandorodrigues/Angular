@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Modelo.Domain.Entidades.CadastrosIniciais
 {
@@ -8,5 +9,6 @@ namespace Modelo.Domain.Entidades.CadastrosIniciais
         public string Sigla { get; set; }
         public Guid Pais_Ukey { get; set; }
         public virtual Pais Pais { get; set; }
+        public virtual ICollection<Cidade> Cidades { get; set; }
     }
 }

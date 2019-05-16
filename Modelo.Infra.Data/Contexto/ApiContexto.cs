@@ -1,7 +1,5 @@
-﻿using JetBrains.Annotations;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Modelo.Domain.Entidades.Acesso;
-using Modelo.Domain.Entidades.CadastrosIniciais;
 using Modelo.Infra.Data.Mapeamento;
 
 namespace Modelo.Infra.Data.Contexto
@@ -19,6 +17,8 @@ namespace Modelo.Infra.Data.Contexto
         {
             //classes do mapeamento com o banco vai aqui
             modelBuilder.ApplyConfiguration(new PaisConfiguracao());
+            modelBuilder.ApplyConfiguration(new EstadoConfiguracao());
+            modelBuilder.ApplyConfiguration(new CidadeConfiguracao());
             base.OnModelCreating(modelBuilder);
 
         }

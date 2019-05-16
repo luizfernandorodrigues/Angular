@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Modelo.Domain.Entidades.CadastrosIniciais;
-using System;
 
 namespace Modelo.Infra.Data.Mapeamento
 {
@@ -52,7 +51,7 @@ namespace Modelo.Infra.Data.Mapeamento
                 .HasDefaultValueSql("GETDATE()")
                 .IsRequired(true);
 
-            //fkempresa
+            //propriedade fkempresa
             builder.Property(p => p.Empresa_Ukey)
                 .HasColumnName("Empresa_Ukey")
                 .HasColumnType("uniqueidentifier")
