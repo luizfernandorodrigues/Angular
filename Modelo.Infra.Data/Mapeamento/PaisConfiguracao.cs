@@ -22,26 +22,23 @@ namespace Modelo.Infra.Data.Mapeamento
             builder.Property(p => p.Ukey)
                 .HasColumnName("Ukey")
                 .HasColumnType("uniqueidentifier");
-            
+
             //Nome
             builder.Property(p => p.Nome)
                 .HasColumnName("Nome")
-                .HasColumnType("nvarchar")
-                .HasMaxLength(100)
+                .HasColumnType("nvarchar(100)")
                 .IsRequired(true);
 
             //codigo
             builder.Property(p => p.Codigo)
                 .HasColumnName("Codigo")
-                .HasColumnType("nvarchar")
-                .HasMaxLength(10)
-                .IsRequired(false) ;
+                .HasColumnType("nvarchar(10)")
+                .IsRequired(false);
 
             //observações
             builder.Property(p => p.Observacoes)
                 .HasColumnName("Observacoes")
-                .HasColumnType("nvarchar")
-                .HasMaxLength(4000)
+                .HasColumnType("nvarchar(MAX)")
                 .IsRequired(false);
 
             //timestamp

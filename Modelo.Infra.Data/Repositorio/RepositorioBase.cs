@@ -1,45 +1,68 @@
 ﻿using Modelo.Domain.Interfaces;
+using Modelo.Infra.Data.Contexto;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
+using System.Linq;
 
 namespace Modelo.Infra.Data.Repositorio
 {
+    /// <summary>
+    /// Classe base do repositorio que implementa o contrato de CRUD
+    /// </summary>
+    /// <typeparam name="TEntity"></typeparam>
+    /// <remarks>
+    /// Autor:  Luiz Fernando
+    /// Data:   17/05/2019
+    /// </remarks>
     public class RepositorioBase<TEntity> : IBaseRepositorio<TEntity> where TEntity : class
     {
-        public RepositorioBase()
+        #region Propriedades
+        protected readonly ApiContexto ApiContexto;
+        #endregion Propriedades
+
+        #region Métodos Publicos
+        public RepositorioBase(ApiContexto apiContexto)
         {
-                
+            ApiContexto = apiContexto;
         }
         public void Adicionar(TEntity entity)
         {
-            throw new NotImplementedException();
+            ApiContexto.Set<TEntity>().Add(entity);
+            ApiContexto.SaveChanges();
         }
 
         public void Atualizar(TEntity entity)
         {
-            throw new NotImplementedException();
+            ApiContexto.Set<TEntity>().Update(entity);
+            ApiContexto.SaveChanges();
         }
 
         public void Deletar(TEntity entity)
         {
-            throw new NotImplementedException();
+            ApiContexto.Remove(entity);
+            ApiContexto.SaveChanges();
         }
 
         public TEntity ObterPorId(Expression<Func<TEntity, bool>> predicado)
         {
-            throw new NotImplementedException();
+            return ApiContexto.Set<TEntity>().FirstOrDefault(predicado);
         }
 
-        public IEquatable<TEntity> ObterTudo(Expression<Func<TEntity, bool>> predicado = null)
+        public IEnumerable<TEntity> ObterTudo(Expression<Func<TEntity, bool>> predicado = null)
         {
-            throw new NotImplementedException();
+            if (predicado != null)
+            {
+                return ApiContexto.Set<TEntity>().Where(predicado);
+            }
+            return ApiContexto.Set<TEntity>().AsEnumerable();
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            ApiContexto.Dispose();
         }
+        #endregion Métodos Publicos
     }
 }

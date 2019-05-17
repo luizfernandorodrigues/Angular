@@ -23,6 +23,8 @@ namespace Modelo.Infra.Data.Mapeamento
             //pk
             builder.HasKey(u => u.Ukey);
 
+            //propriedade
+
             //nome
             builder.Property(u => u.Nome)
                 .HasColumnName("Nome");

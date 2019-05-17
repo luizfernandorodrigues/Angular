@@ -30,15 +30,13 @@ namespace Modelo.Infra.Data.Mapeamento
             //propriedade nome
             builder.Property(e => e.Nome)
                 .HasColumnName("Nome")
-                .HasColumnType("nvarchar")
-                .HasMaxLength(100)
+                .HasColumnType("nvarchar(100)")
                 .IsRequired(true);
 
             //propriedade sigla
             builder.Property(e => e.Sigla)
                 .HasColumnName("Sigla")
-                .HasColumnType("nvarchar")
-                .HasMaxLength(2)
+                .HasColumnType("nvarchar(2)")
                 .IsRequired(true);
 
             //propriedade timestamp

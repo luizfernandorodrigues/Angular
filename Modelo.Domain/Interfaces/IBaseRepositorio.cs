@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq.Expressions;
 
 namespace Modelo.Domain.Interfaces
@@ -15,7 +16,7 @@ namespace Modelo.Domain.Interfaces
     {
         void Adicionar(TEntity entity);
         TEntity ObterPorId(Expression<Func<TEntity, bool>> predicado);
-        IEquatable<TEntity> ObterTudo(Expression<Func<TEntity, bool>> predicado = null);
+        IEnumerable<TEntity> ObterTudo(Expression<Func<TEntity, bool>> predicado = null);
         void Atualizar(TEntity entity);
         void Deletar(TEntity entity);
     }

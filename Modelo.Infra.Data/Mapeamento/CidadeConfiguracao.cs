@@ -30,16 +30,14 @@ namespace Modelo.Infra.Data.Mapeamento
             //propriedade nome
             builder.Property(c => c.Nome)
                 .HasColumnName("Nome")
-                .HasColumnType("nvarchar")
-                .HasMaxLength(100)
+                .HasColumnType("nvarchar(100)")
                 .IsRequired(true);
 
             //propriedade codigo ibge
             builder.Property(c => c.CodigoIbge)
                 .HasColumnName("CodigoIbge")
-                .HasColumnType("nvarchar")
-                .HasMaxLength(7)
-                .HasDefaultValue(0)
+                .HasColumnType("nvarchar(7)")
+                .HasDefaultValue("")
                 .IsRequired(true);
 
             //propriedade TimesTamp

@@ -6,7 +6,9 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Modelo.Domain.Interfaces;
 using Modelo.Infra.Data.Contexto;
+using Modelo.Infra.Data.Repositorio;
 
 namespace WebApi
 {
@@ -30,6 +32,9 @@ namespace WebApi
                 option => option.
                 UseLazyLoadingProxies()
                 .UseSqlServer(connectionString, m => m.MigrationsAssembly("Modelo.Infra.Data")));
+
+            //adiciona os repositorios
+            services.AddScoped<IPaisRepositorio, RepositorioPais>();
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
