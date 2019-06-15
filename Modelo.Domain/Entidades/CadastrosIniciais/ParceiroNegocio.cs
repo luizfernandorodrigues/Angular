@@ -20,7 +20,9 @@ namespace Modelo.Domain.Entidades.CadastrosIniciais
         public bool Cliente { get; set; }
         public bool Fonecedor { get; set; }
         public bool Tipo { get; set; }
+        public long Cep_Id { get; set; }
         public virtual Cep Cep { get; set; }
+        public long TipoDocumento_Id { get; set; }
         public virtual TipoDocumento TipoDocumento { get; set; }
 
     }

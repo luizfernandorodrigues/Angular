@@ -13,7 +13,7 @@ namespace Modelo.Domain.Entidades.CadastrosIniciais
     public class Cep : EntidadeAbstrata
     {
         public string CodigoEnderecamentoPostal { get; set; }
-        public Guid Cidade_Ukey { get; set; }
+        public long Cidade_Id { get; set; }
         public virtual Cidade Cidade { get; set; }
         public virtual ICollection<ParceiroNegocio> ParceiroNegocios { get; set; }
 

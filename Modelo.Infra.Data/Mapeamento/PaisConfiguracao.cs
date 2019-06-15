@@ -4,56 +4,45 @@ using Modelo.Domain.Entidades.CadastrosIniciais;
 
 namespace Modelo.Infra.Data.Mapeamento
 {
-    /// <summary>
-    /// Classe responsavel por mapear a entidade pais com a tabela no banco de dados
-    /// </summary>
-    /// <remarks>
-    /// Autor:  Luiz Fernando
-    /// Data:   15/05/2019
-    /// </remarks>
     public class PaisConfiguracao : IEntityTypeConfiguration<Pais>
     {
         public void Configure(EntityTypeBuilder<Pais> builder)
         {
-            #region Mapeamento Propriedades
-            //pk
+            #region Mapeamentos Propriedades
+            //tabela
             builder.ToTable("Pais");
-            builder.HasKey(p => p.Ukey);
-            builder.Property(p => p.Ukey)
-                .HasColumnName("Ukey")
-                .HasColumnType("uniqueidentifier");
 
-            //Nome
+            //pk
+            builder.HasKey(p => p.Id);
+            builder.Property(p => p.Id)
+                .HasColumnType("BIGINT")
+                .ValueGeneratedOnAdd();
+            //nome
             builder.Property(p => p.Nome)
                 .HasColumnName("Nome")
-                .HasColumnType("nvarchar(100)")
-                .IsRequired(true);
-
+                .HasColumnType("VARCHAR(200)")
+                .IsRequired();
             //codigo
             builder.Property(p => p.Codigo)
                 .HasColumnName("Codigo")
-                .HasColumnType("nvarchar(10)")
+                .HasColumnType("VARCHAR(10)")
+                .HasDefaultValue("")
                 .IsRequired(false);
-
-            //observações
+            //observaçoes
             builder.Property(p => p.Observacoes)
                 .HasColumnName("Observacoes")
-                .HasColumnType("nvarchar(MAX)")
+                .HasColumnType("VARCHAR(MAX)")
+                .HasDefaultValue("")
                 .IsRequired(false);
-
-            //timestamp
+            //datetime
             builder.Property(p => p.TimesTamp)
                 .HasColumnName("TimesTamp")
-                .HasColumnType("DateTime")
+                .HasColumnType("DATETIME")
                 .HasDefaultValueSql("GETDATE()")
-                .IsRequired(true);
-
-            //propriedade fkempresa
-            builder.Property(p => p.Empresa_Ukey)
-                .HasColumnName("Empresa_Ukey")
-                .HasColumnType("uniqueidentifier")
-                .IsRequired(false);
+                .ValueGeneratedOnAddOrUpdate()
+                .IsRequired();
             #endregion
+
         }
     }
 }
