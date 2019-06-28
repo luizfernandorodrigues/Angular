@@ -3,82 +3,23 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Modelo.Infra.Data.Contexto;
 
 namespace Modelo.Infra.Data.Migrations
 {
     [DbContext(typeof(ApiContexto))]
-    partial class ApiContextoModelSnapshot : ModelSnapshot
+    [Migration("20190628130903_VersaoBanco_001")]
+    partial class VersaoBanco_001
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.2.4-servicing-10062")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("Modelo.Domain.Entidades.CadastrosIniciais.Cep", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("BIGINT")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<long>("Cidade_Id");
-
-                    b.Property<string>("CodigoEnderecamentoPostal")
-                        .IsRequired()
-                        .HasColumnName("CodigoEnderecamentoPostal")
-                        .HasColumnType("VARCHAR(8)");
-
-                    b.Property<DateTime>("TimesTamp")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("TimesTamp")
-                        .HasColumnType("DATETIME")
-                        .HasDefaultValueSql("GETDATE()");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Cidade_Id");
-
-                    b.ToTable("Cep");
-                });
-
-            modelBuilder.Entity("Modelo.Domain.Entidades.CadastrosIniciais.Cidade", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("BIGINT")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("CodigoIbge")
-                        .IsRequired()
-                        .HasColumnName("CodigoIbge")
-                        .HasColumnType("VARCHAR(7)");
-
-                    b.Property<long>("Estado_Id");
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnName("Nome")
-                        .HasColumnType("VARCHAR(200)");
-
-                    b.Property<DateTime>("TimesTamp")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("TimesTamp")
-                        .HasColumnType("DATETIME")
-                        .HasDefaultValueSql("GETDATE()");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Estado_Id");
-
-                    b.ToTable("Cidade");
-                });
 
             modelBuilder.Entity("Modelo.Domain.Entidades.CadastrosIniciais.Estado", b =>
                 {
@@ -146,24 +87,6 @@ namespace Modelo.Infra.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Pais");
-                });
-
-            modelBuilder.Entity("Modelo.Domain.Entidades.CadastrosIniciais.Cep", b =>
-                {
-                    b.HasOne("Modelo.Domain.Entidades.CadastrosIniciais.Cidade", "Cidade")
-                        .WithMany("Ceps")
-                        .HasForeignKey("Cidade_Id")
-                        .HasConstraintName("Fk_Cep_Cidade")
-                        .OnDelete(DeleteBehavior.Restrict);
-                });
-
-            modelBuilder.Entity("Modelo.Domain.Entidades.CadastrosIniciais.Cidade", b =>
-                {
-                    b.HasOne("Modelo.Domain.Entidades.CadastrosIniciais.Estado", "Estado")
-                        .WithMany("Cidades")
-                        .HasForeignKey("Estado_Id")
-                        .HasConstraintName("Fk_Cidade_Estado")
-                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("Modelo.Domain.Entidades.CadastrosIniciais.Estado", b =>

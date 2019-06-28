@@ -1,21 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace Modelo.Domain.Entidades.CadastrosIniciais
 {
     /// <summary>
-    /// Classe que representa o Modelo de Cep
+    /// Classe de modelo de persistencia do objeto Cep
     /// </summary>
-    /// <remarks>
-    /// Autor:  Luiz Fernando
-    /// Data:   15/05/2019
-    /// </remarks>
     public class Cep : EntidadeAbstrata
     {
         public string CodigoEnderecamentoPostal { get; set; }
         public long Cidade_Id { get; set; }
         public virtual Cidade Cidade { get; set; }
-        public virtual ICollection<ParceiroNegocio> ParceiroNegocios { get; set; }
-
     }
 }

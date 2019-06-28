@@ -2,9 +2,8 @@
 using Modelo.Infra.Data.Contexto;
 using System;
 using System.Collections.Generic;
-using System.Linq.Expressions;
-using System.Text;
 using System.Linq;
+using System.Linq.Expressions;
 
 namespace Modelo.Infra.Data.Repositorio
 {

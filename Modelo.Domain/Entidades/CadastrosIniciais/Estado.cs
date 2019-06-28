@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace Modelo.Domain.Entidades.CadastrosIniciais
 {
+    /// <summary>
+    /// Classe de modelo de persistencia do objeto Estado
+    /// </summary>
     public class Estado : EntidadeAbstrata
     {
         public string Nome { get; set; }

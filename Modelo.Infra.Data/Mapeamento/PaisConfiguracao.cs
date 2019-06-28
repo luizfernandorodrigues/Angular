@@ -4,6 +4,14 @@ using Modelo.Domain.Entidades.CadastrosIniciais;
 
 namespace Modelo.Infra.Data.Mapeamento
 {
+    /// <summary>
+    /// Classe de MApeamento da Classe de dominio Pais com a tabela Pais na base de dados
+    /// </summary>
+    /// <param name="builder"></param>
+    /// <remarks>
+    /// Autor:  Luiz Fernando
+    /// Data:   28/06/2019
+    /// </remarks>
     public class PaisConfiguracao : IEntityTypeConfiguration<Pais>
     {
         public void Configure(EntityTypeBuilder<Pais> builder)

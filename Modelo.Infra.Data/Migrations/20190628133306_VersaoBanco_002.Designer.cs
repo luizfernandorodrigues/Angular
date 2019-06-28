@@ -10,8 +10,8 @@ using Modelo.Infra.Data.Contexto;
 namespace Modelo.Infra.Data.Migrations
 {
     [DbContext(typeof(ApiContexto))]
-    [Migration("20190615161330_VersaoBanco_001")]
-    partial class VersaoBanco_001
+    [Migration("20190628133306_VersaoBanco_002")]
+    partial class VersaoBanco_002
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,19 +25,26 @@ namespace Modelo.Infra.Data.Migrations
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnName("Id")
+                        .HasColumnType("BIGINT")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<long?>("CidadeId");
 
                     b.Property<long>("Cidade_Id");
 
-                    b.Property<string>("CodigoEnderecamentoPostal");
+                    b.Property<string>("CodigoEnderecamentoPostal")
+                        .IsRequired()
+                        .HasColumnName("CodigoEnderecamentoPostal")
+                        .HasColumnType("VARCHAR(8)");
 
-                    b.Property<DateTime>("TimesTamp");
+                    b.Property<DateTime>("TimesTamp")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("TimesTamp")
+                        .HasColumnType("DATETIME")
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CidadeId");
+                    b.HasIndex("Cidade_Id");
 
                     b.ToTable("Cep");
                 });
@@ -46,21 +53,31 @@ namespace Modelo.Infra.Data.Migrations
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnName("Id")
+                        .HasColumnType("BIGINT")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CodigoIbge");
-
-                    b.Property<long?>("EstadoId");
+                    b.Property<string>("CodigoIbge")
+                        .IsRequired()
+                        .HasColumnName("CodigoIbge")
+                        .HasColumnType("VARCHAR(7)");
 
                     b.Property<long>("Estado_Id");
 
-                    b.Property<string>("Nome");
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnName("Nome")
+                        .HasColumnType("VARCHAR(200)");
 
-                    b.Property<DateTime>("TimesTamp");
+                    b.Property<DateTime>("TimesTamp")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("TimesTamp")
+                        .HasColumnType("DATETIME")
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EstadoId");
+                    b.HasIndex("Estado_Id");
 
                     b.ToTable("Cidade");
                 });
@@ -69,21 +86,31 @@ namespace Modelo.Infra.Data.Migrations
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnName("Id")
+                        .HasColumnType("BIGINT")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Nome");
-
-                    b.Property<long?>("PaisId");
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnName("Nome")
+                        .HasColumnType("VARCHAR(100)");
 
                     b.Property<long>("Pais_Id");
 
-                    b.Property<string>("Sigla");
+                    b.Property<string>("Sigla")
+                        .IsRequired()
+                        .HasColumnName("Sigla")
+                        .HasColumnType("VARCHAR(2)");
 
-                    b.Property<DateTime>("TimesTamp");
+                    b.Property<DateTime>("TimesTamp")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnName("TimesTamp")
+                        .HasColumnType("DATETIME")
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PaisId");
+                    b.HasIndex("Pais_Id");
 
                     b.ToTable("Estado");
                 });
@@ -123,106 +150,31 @@ namespace Modelo.Infra.Data.Migrations
                     b.ToTable("Pais");
                 });
 
-            modelBuilder.Entity("Modelo.Domain.Entidades.CadastrosIniciais.ParceiroNegocio", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<bool>("Ativo");
-
-                    b.Property<string>("Bairro");
-
-                    b.Property<long?>("CepId");
-
-                    b.Property<long>("Cep_Id");
-
-                    b.Property<bool>("Cliente");
-
-                    b.Property<string>("Codigo");
-
-                    b.Property<string>("Complemento");
-
-                    b.Property<string>("CpfCnpj");
-
-                    b.Property<string>("Email");
-
-                    b.Property<string>("Endereco");
-
-                    b.Property<string>("Fantasia");
-
-                    b.Property<bool>("Fonecedor");
-
-                    b.Property<string>("NumeroEndereco");
-
-                    b.Property<string>("RazaoSocial");
-
-                    b.Property<string>("Telefone");
-
-                    b.Property<DateTime>("TimesTamp");
-
-                    b.Property<bool>("Tipo");
-
-                    b.Property<long?>("TipoDocumentoId");
-
-                    b.Property<long>("TipoDocumento_Id");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CepId");
-
-                    b.HasIndex("TipoDocumentoId");
-
-                    b.ToTable("ParceiroNegocio");
-                });
-
-            modelBuilder.Entity("Modelo.Domain.Entidades.CadastrosIniciais.TipoDocumento", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Codigo");
-
-                    b.Property<string>("Descricao");
-
-                    b.Property<DateTime>("TimesTamp");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("TipoDocumento");
-                });
-
             modelBuilder.Entity("Modelo.Domain.Entidades.CadastrosIniciais.Cep", b =>
                 {
                     b.HasOne("Modelo.Domain.Entidades.CadastrosIniciais.Cidade", "Cidade")
                         .WithMany("Ceps")
-                        .HasForeignKey("CidadeId");
+                        .HasForeignKey("Cidade_Id")
+                        .HasConstraintName("Fk_Cep_Cidade")
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("Modelo.Domain.Entidades.CadastrosIniciais.Cidade", b =>
                 {
                     b.HasOne("Modelo.Domain.Entidades.CadastrosIniciais.Estado", "Estado")
                         .WithMany("Cidades")
-                        .HasForeignKey("EstadoId");
+                        .HasForeignKey("Estado_Id")
+                        .HasConstraintName("Fk_Cidade_Estado")
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("Modelo.Domain.Entidades.CadastrosIniciais.Estado", b =>
                 {
                     b.HasOne("Modelo.Domain.Entidades.CadastrosIniciais.Pais", "Pais")
                         .WithMany("Estados")
-                        .HasForeignKey("PaisId");
-                });
-
-            modelBuilder.Entity("Modelo.Domain.Entidades.CadastrosIniciais.ParceiroNegocio", b =>
-                {
-                    b.HasOne("Modelo.Domain.Entidades.CadastrosIniciais.Cep", "Cep")
-                        .WithMany("ParceiroNegocios")
-                        .HasForeignKey("CepId");
-
-                    b.HasOne("Modelo.Domain.Entidades.CadastrosIniciais.TipoDocumento", "TipoDocumento")
-                        .WithMany("ParceiroNegocios")
-                        .HasForeignKey("TipoDocumentoId");
+                        .HasForeignKey("Pais_Id")
+                        .HasConstraintName("Fk_Estado_Pais")
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 #pragma warning restore 612, 618
         }
