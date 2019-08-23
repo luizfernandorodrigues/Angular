@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { PaisComponent } from './pais/pais.component';
+import { LoginComponent } from './usuario/login/login.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PaisComponent } from './pais/pais.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    PaisComponent
+    PaisComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -29,6 +31,7 @@ import { PaisComponent } from './pais/pais.component';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'pais', component: PaisComponent },
+      { path: 'entrar', component: LoginComponent }
     ])
   ],
   providers: [],

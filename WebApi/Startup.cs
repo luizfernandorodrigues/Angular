@@ -76,7 +76,7 @@ namespace WebApi
 
                 if (env.IsDevelopment())
                 {
-                    //    spa.UseAngularCliServer(npmScript: "start");
+                    //.UseAngularCliServer(npmScript: "start");
                     spa.UseProxyToSpaDevelopmentServer("http://localhost:4200/");
                 }
             });
