@@ -20,8 +20,11 @@
           <li class="nav-item" [routerLinkActive]='["link-active"]'>
             <a class="nav-link text-dark" [routerLink]='["/pais"]'>Pais</a>
           </li>
-          <li class="nav-item" [routerLinkActive]='["link-active"]'>
+          <li class="nav-item" [routerLinkActive]='["link-active"]' *ngIf="!usuarioLogado()">
             <a class="nav-link text-dark" [routerLink]='["/entrar"]'>Login</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]='["link-active"]' *ngIf="usuarioLogado()">
+            <a class="nav-item nav-link text-dark" [routerLink]='["/sair"]'(click)="Sair()">Sair</a>
           </li>
         </ul>
       </div>

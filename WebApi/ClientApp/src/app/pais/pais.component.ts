@@ -13,6 +13,6 @@ export class PaisComponent {
 
 
   public obterNome():string {
-    return "teste modificado";
+    return "teste modificado teste teste";
   }
 }

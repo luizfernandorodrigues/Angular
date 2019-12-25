@@ -2,11 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AssemblyVersion>1.2019.12.25</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Servicos\" />
-    <Folder Include="Validadores\" />
+    <Compile Remove="Servicos\**" />
+    <Compile Remove="Validadores\**" />
+    <EmbeddedResource Remove="Servicos\**" />
+    <EmbeddedResource Remove="Validadores\**" />
+    <None Remove="Servicos\**" />
+    <None Remove="Validadores\**" />
   </ItemGroup>
 
   <ItemGroup>
