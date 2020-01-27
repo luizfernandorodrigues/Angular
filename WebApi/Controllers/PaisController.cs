@@ -1,10 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Modelo.Domain.Entidades.CadastrosIniciais;
-using Modelo.Domain.Interfaces;
+using Modelo.Domain.Interfaces.Cadastros.Logradouro;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace WebApi.Controllers
 {
@@ -19,11 +16,11 @@ namespace WebApi.Controllers
     public class PaisController : Controller
     {
         #region Propriedades
-        private readonly IPaisRepositorio _paisRepositorio;
+        private readonly IRepositorioPais _paisRepositorio;
         #endregion
 
         #region Construtor
-        public PaisController(IPaisRepositorio paisRepositorio)
+        public PaisController(IRepositorioPais paisRepositorio)
         {
             _paisRepositorio = paisRepositorio;
         }

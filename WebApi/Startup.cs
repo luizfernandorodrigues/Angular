@@ -1,13 +1,14 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Modelo.Domain.Interfaces;
+using Modelo.Domain.Interfaces.Acesso;
+using Modelo.Domain.Interfaces.Cadastros.Logradouro;
 using Modelo.Infra.Data.Contexto;
-using Modelo.Infra.Data.Repositorio;
+using Modelo.Infra.Data.Repositorio.Acesso;
+using Modelo.Infra.Data.Repositorio.Cadastro.Logradouro;
 
 namespace WebApi
 {
@@ -33,7 +34,8 @@ namespace WebApi
                 .UseSqlServer(connectionString, m => m.MigrationsAssembly("Modelo.Infra.Data")));
 
             //adiciona os repositorios
-            services.AddScoped<IPaisRepositorio, RepositorioPais>();
+            services.AddScoped<IRepositorioPais, RepositorioPais>();
+            services.AddScoped<IRepositorioUsuario, RepositorioUsuario>();
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

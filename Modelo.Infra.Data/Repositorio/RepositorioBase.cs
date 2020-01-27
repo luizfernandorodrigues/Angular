@@ -15,7 +15,7 @@ namespace Modelo.Infra.Data.Repositorio
     /// Autor:  Luiz Fernando
     /// Data:   17/05/2019
     /// </remarks>
-    public class RepositorioBase<TEntity> : IBaseRepositorio<TEntity> where TEntity : class
+    public class RepositorioBase<TEntity> : IRepositorioBase<TEntity> where TEntity : class
     {
         #region Propriedades
         protected readonly ApiContexto ApiContexto;

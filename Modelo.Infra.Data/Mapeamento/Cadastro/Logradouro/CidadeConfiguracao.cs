@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Modelo.Domain.Entidades.CadastrosIniciais;
 
-namespace Modelo.Infra.Data.Mapeamento
+namespace Modelo.Infra.Data.Mapeamento.Cadastro.Logradouro
 {
     /// <summary>
     /// Classe de MApeamento da Classe de dominio Cidade com a tabela Cidade na base de dados
@@ -17,7 +17,7 @@ namespace Modelo.Infra.Data.Mapeamento
         public void Configure(EntityTypeBuilder<Cidade> builder)
         {
             //tabela
-            builder.ToTable("Cidade");
+            builder.ToTable("Cidade", "Cadastro");
             //pk
             builder.HasKey(c => c.Id);
             builder.Property(c => c.Id)

@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Modelo.Domain.Entidades.Acesso;
+using Modelo.Domain.Interfaces.Acesso;
+using Modelo.Infra.CrossCutting.Extensions;
 using System;
 
 namespace WebApi.Controllers
@@ -7,6 +9,19 @@ namespace WebApi.Controllers
     [Route("api/[Controller]")]
     public class UsuarioController : Controller
     {
+
+        #region Atributos
+        private readonly IRepositorioUsuario repositorioUsuario;
+        #endregion
+
+        #region Construtor
+        public UsuarioController(IRepositorioUsuario repositorio)
+        {
+            repositorioUsuario = repositorio;
+        }
+        #endregion
+
+
         [HttpPost]
         public ActionResult Post()
         {
@@ -39,7 +54,9 @@ namespace WebApi.Controllers
         {
             try
             {
-                if (usuario.Email == "luizfernando_rodrigues12@hotmail.com" && usuario.Senha == "1234")
+                var usuarioRetorno = repositorioUsuario.Login(usuario.Senha, usuario.Email);
+
+                if (usuarioRetorno.IsNotNull())
                     return Ok(usuario);
 
                 return BadRequest("Usuário ou Senha Inválidos");

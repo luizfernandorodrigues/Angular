@@ -10,7 +10,7 @@
 
     <!-- Set this to true if you enable server-side prerendering -->
     <BuildServerSideRenderer>false</BuildServerSideRenderer>
-    <AssemblyVersion>1.2019.12.25</AssemblyVersion>
+    <AssemblyVersion>1.2020.1.27</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -37,6 +37,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Modelo.Infra.CrossCutting\Modelo.Infra.CrossCutting.csproj" />
     <ProjectReference Include="..\Modelo.Infra.Data\Modelo.Infra.Data.csproj" />
   </ItemGroup>
 

@@ -12,7 +12,7 @@ namespace Modelo.Domain.Interfaces
     /// Data:   15/05/2019
     /// </remarks>
     /// <typeparam name="TEntity">Classe de entidade</typeparam>
-    public interface IBaseRepositorio<TEntity> : IDisposable where TEntity : class
+    public interface IRepositorioBase<TEntity> : IDisposable where TEntity : class
     {
         void Adicionar(TEntity entity);
         TEntity ObterPorId(Expression<Func<TEntity, bool>> predicado);

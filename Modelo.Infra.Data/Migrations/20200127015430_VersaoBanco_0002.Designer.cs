@@ -10,16 +10,45 @@ using Modelo.Infra.Data.Contexto;
 namespace Modelo.Infra.Data.Migrations
 {
     [DbContext(typeof(ApiContexto))]
-    [Migration("20190628133306_VersaoBanco_002")]
-    partial class VersaoBanco_002
+    [Migration("20200127015430_VersaoBanco_0002")]
+    partial class VersaoBanco_0002
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062")
+                .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("Modelo.Domain.Entidades.Acesso.Usuario", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("Id")
+                        .HasColumnType("BIGINT")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnName("Email")
+                        .HasColumnType("VARCHAR(200)");
+
+                    b.Property<string>("Senha")
+                        .IsRequired()
+                        .HasColumnName("Senha")
+                        .HasColumnType("VARCHAR(MAX)");
+
+                    b.Property<DateTime>("TimesTamp")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("TimesTamp")
+                        .HasColumnType("DATETIME")
+                        .HasDefaultValueSql("GETDATE()");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Usuario","Acesso");
+                });
 
             modelBuilder.Entity("Modelo.Domain.Entidades.CadastrosIniciais.Cep", b =>
                 {
@@ -46,7 +75,7 @@ namespace Modelo.Infra.Data.Migrations
 
                     b.HasIndex("Cidade_Id");
 
-                    b.ToTable("Cep");
+                    b.ToTable("Cep","Cadastro");
                 });
 
             modelBuilder.Entity("Modelo.Domain.Entidades.CadastrosIniciais.Cidade", b =>
@@ -79,7 +108,7 @@ namespace Modelo.Infra.Data.Migrations
 
                     b.HasIndex("Estado_Id");
 
-                    b.ToTable("Cidade");
+                    b.ToTable("Cidade","Cadastro");
                 });
 
             modelBuilder.Entity("Modelo.Domain.Entidades.CadastrosIniciais.Estado", b =>
@@ -112,7 +141,7 @@ namespace Modelo.Infra.Data.Migrations
 
                     b.HasIndex("Pais_Id");
 
-                    b.ToTable("Estado");
+                    b.ToTable("Estado","Cadastro");
                 });
 
             modelBuilder.Entity("Modelo.Domain.Entidades.CadastrosIniciais.Pais", b =>
@@ -147,7 +176,7 @@ namespace Modelo.Infra.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Pais");
+                    b.ToTable("Pais","Cadastro");
                 });
 
             modelBuilder.Entity("Modelo.Domain.Entidades.CadastrosIniciais.Cep", b =>

@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Modelo.Infra.Data.Mapeamento
+namespace Modelo.Infra.Data.Mapeamento.Cadastro.Logradouro
 {
     /// <summary>
     /// Classe de MApeamento da Classe de dominio Cep com a tabela cep na base de dados
@@ -20,7 +20,7 @@ namespace Modelo.Infra.Data.Mapeamento
         public void Configure(EntityTypeBuilder<Cep> builder)
         {
             //tabela
-            builder.ToTable("Cep");
+            builder.ToTable("Cep", "Cadastro");
             //pk
             builder.HasKey(c => c.Id);
             builder.Property(c => c.Id)

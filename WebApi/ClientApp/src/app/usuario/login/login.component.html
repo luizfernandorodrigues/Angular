@@ -28,7 +28,12 @@
         Senha é Obrigatória
       </div>
     </div>
-    <button class="btn btn-primary btn-block" type="submit" (click)="entrar()">Entrar</button>
+    <button class="btn btn-primary btn-block" type="submit" (click)="entrar()">
+      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+    Entrar</button>
+    <div class="alert alert-danger" *ngIf="mensagem">
+      {{mensagem}}
+    </div>
     <img src="../../../assets/img/logon.jpg" />
   </form>
 </div>

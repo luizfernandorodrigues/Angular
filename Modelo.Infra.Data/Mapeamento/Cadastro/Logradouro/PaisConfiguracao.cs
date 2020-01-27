@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Modelo.Domain.Entidades.CadastrosIniciais;
 
-namespace Modelo.Infra.Data.Mapeamento
+namespace Modelo.Infra.Data.Mapeamento.Cadastro.Logradouro
 {
     /// <summary>
     /// Classe de MApeamento da Classe de dominio Pais com a tabela Pais na base de dados
@@ -18,7 +18,7 @@ namespace Modelo.Infra.Data.Mapeamento
         {
             #region Mapeamentos Propriedades
             //tabela
-            builder.ToTable("Pais");
+            builder.ToTable("Pais", "Cadastro");
 
             //pk
             builder.HasKey(p => p.Id);
