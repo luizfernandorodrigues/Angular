@@ -10,7 +10,7 @@
 
     <!-- Set this to true if you enable server-side prerendering -->
     <BuildServerSideRenderer>false</BuildServerSideRenderer>
-    <AssemblyVersion>1.2020.1.27</AssemblyVersion>
+    <AssemblyVersion>1.2020.1.30</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -30,8 +30,12 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\autorizacao\guarda.rotas.ts" />
+    <None Remove="ClientApp\src\app\modelo\cadastro\logradouro\pais.ts" />
+    <None Remove="ClientApp\src\app\modelo\IEntidade.ts" />
     <None Remove="ClientApp\src\app\modelo\usuario\usuario.ts" />
     <None Remove="ClientApp\src\app\pais\pais.component.ts" />
+    <None Remove="ClientApp\src\app\servicos\base.servico.ts" />
+    <None Remove="ClientApp\src\app\servicos\cadastro\logradouro\pais.servico.ts" />
     <None Remove="ClientApp\src\app\servicos\usuario\usuario.servico.ts" />
     <None Remove="ClientApp\src\app\usuario\cadastro\cadastro.usuario.component.ts" />
     <None Remove="ClientApp\src\app\usuario\login\login.component.ts" />
@@ -44,8 +48,12 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\autorizacao\guarda.rotas.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modelo\cadastro\logradouro\pais.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modelo\IEntidade.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\modelo\usuario\usuario.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\pais\pais.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\servicos\base.servico.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\servicos\cadastro\logradouro\pais.servico.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\servicos\usuario\usuario.servico.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\usuario\cadastro\cadastro.usuario.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\usuario\login\login.component.ts" />
@@ -55,10 +63,6 @@
     <Content Update="configuracao.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ClientApp\src\app\servicos\pais\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

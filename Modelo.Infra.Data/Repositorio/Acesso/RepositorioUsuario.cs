@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Modelo.Domain.Entidades.Acesso;
-using Modelo.Domain.Interfaces.Acesso;
+using Modelo.Domain.Interfaces.Repositorios.Acesso;
 using Modelo.Infra.Data.Contexto;
 using System.Linq;
 

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Modelo.Domain.Entidades.CadastrosIniciais;
+using Modelo.Domain.Entidades.Cadastros.Logradouro;
 
 namespace Modelo.Infra.Data.Mapeamento.Cadastro.Logradouro
 {

@@ -1,6 +1,7 @@
 ﻿using Modelo.Domain.Entidades.Acesso;
+using Modelo.Domain.Interfaces.Repositorios;
 
-namespace Modelo.Domain.Interfaces.Acesso
+namespace Modelo.Domain.Interfaces.Repositorios.Acesso
 {
     /// <summary>
     /// Interface de acesso a dados do objeto usuario

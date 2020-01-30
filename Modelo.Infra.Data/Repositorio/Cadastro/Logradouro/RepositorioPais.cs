@@ -1,5 +1,5 @@
-﻿using Modelo.Domain.Entidades.CadastrosIniciais;
-using Modelo.Domain.Interfaces.Cadastros.Logradouro;
+﻿using Modelo.Domain.Entidades.Cadastros.Logradouro;
+using Modelo.Domain.Interfaces.Repositorios.Cadastros.Logradouro;
 using Modelo.Infra.Data.Contexto;
 
 namespace Modelo.Infra.Data.Repositorio.Cadastro.Logradouro

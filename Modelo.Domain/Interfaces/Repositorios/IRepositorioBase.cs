@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace Modelo.Domain.Interfaces
+namespace Modelo.Domain.Interfaces.Repositorios
 {
     /// <summary>
     /// Interface que representa o contrato para efetuar o crud

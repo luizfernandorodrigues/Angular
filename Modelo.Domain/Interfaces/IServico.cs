@@ -12,7 +12,7 @@ namespace Modelo.Domain.Interfaces
     /// Data:   15/05/2019
     /// </remarks>
     /// <typeparam name="TEntity"></typeparam>
-    public interface IServico<TEntity> where TEntity : Entidades.EntidadeAbstrata
+    public interface IServico<TEntity> where TEntity : IEntidade
     {
         TEntity Adicionar<T>(TEntity entity) where T : AbstractValidator<TEntity>;
         TEntity Alterar<T>(TEntity entity) where T : AbstractValidator<TEntity>;

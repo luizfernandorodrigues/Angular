@@ -8,6 +8,7 @@ import { GuardaRotas } from './autorizacao/guarda.rotas';
 import { HomeComponent } from './home/home.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { PaisComponent } from './pais/pais.component';
+import { PaisServico } from './servicos/cadastro/logradouro/pais.servico';
 import { UsuarioServico } from './servicos/usuario/usuario.servico';
 import { CadastroUsuarioComponent } from './usuario/cadastro/cadastro.usuario.component';
 import { LoginComponent } from './usuario/login/login.component';
@@ -33,7 +34,7 @@ import { LoginComponent } from './usuario/login/login.component';
             { path: 'novo-usuario', component: CadastroUsuarioComponent }
         ])
     ],
-    providers: [UsuarioServico],
+    providers: [UsuarioServico, PaisServico],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

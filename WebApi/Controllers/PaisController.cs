@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Modelo.Domain.Entidades.CadastrosIniciais;
-using Modelo.Domain.Interfaces.Cadastros.Logradouro;
+using Modelo.Domain.Entidades.Cadastros.Logradouro;
+using Modelo.Domain.Interfaces.Repositorios.Cadastros.Logradouro;
 using System;
 
 namespace WebApi.Controllers

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Modelo.Domain.Entidades.Acesso;
-using Modelo.Domain.Entidades.CadastrosIniciais;
+using Modelo.Domain.Entidades.Cadastros.Logradouro;
 using Modelo.Infra.Data.Mapeamento.Acesso;
 using Modelo.Infra.Data.Mapeamento.Cadastro.Logradouro;
 

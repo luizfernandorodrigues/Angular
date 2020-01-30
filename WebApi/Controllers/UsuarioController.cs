@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Modelo.Domain.Entidades.Acesso;
-using Modelo.Domain.Interfaces.Acesso;
+using Modelo.Domain.Interfaces.Repositorios.Acesso;
 using Modelo.Infra.CrossCutting.Extensions;
 using System;
 

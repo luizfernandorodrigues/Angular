@@ -1,4 +1,4 @@
-﻿using Modelo.Domain.Interfaces;
+﻿using Modelo.Domain.Interfaces.Repositorios;
 using Modelo.Infra.Data.Contexto;
 using System;
 using System.Collections.Generic;

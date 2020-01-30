@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Modelo.Domain.Entidades.CadastrosIniciais;
+using Modelo.Domain.Entidades.Cadastros.Logradouro;
 
 namespace Modelo.Infra.Data.Mapeamento.Cadastro.Logradouro
 {
@@ -37,7 +37,7 @@ namespace Modelo.Infra.Data.Mapeamento.Cadastro.Logradouro
                 .HasDefaultValue("")
                 .IsRequired(false);
             //observaçoes
-            builder.Property(p => p.Observacoes)
+            builder.Property(p => p.Observacao)
                 .HasColumnName("Observacoes")
                 .HasColumnType("VARCHAR(MAX)")
                 .HasDefaultValue("")
