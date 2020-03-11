@@ -11,7 +11,7 @@ namespace Modelo.Domain.Entidades.Cadastros.Logradouro
     public class Pais : IPais
     {
         public string Nome { get; set; }
-        public short Codigo { get; set; }
+        public string Codigo { get; set; }
         public string Observacao { get; set; }
         public virtual ICollection<Estado> Estados { get; set; }
         public long Id { get; set; }

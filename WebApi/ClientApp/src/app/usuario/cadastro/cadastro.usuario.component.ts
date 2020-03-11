@@ -3,28 +3,38 @@ import { Usuario } from '../../modelo/usuario/usuario';
 import { UsuarioServico } from '../../servicos/usuario/usuario.servico';
 
 @Component({
-    selector: 'cadastro-usuario',
-    templateUrl: './cadastro.usuario.component.html',
-    styleUrls: ['./cadastro.usuario.component.css']
+  selector: 'cadastro-usuario',
+  templateUrl: './cadastro.usuario.component.html',
+  styleUrls: ['./cadastro.usuario.component.css']
 })
 export class CadastroUsuarioComponent implements OnInit {
-    
-    public usuario: Usuario;
 
-    constructor(private usuarioServico: UsuarioServico) {
+  public usuario: Usuario;
+  public ativar_spinner: boolean;
+  public mensagem: string;
+  public usuarioCadastrado: boolean;
 
-    }
+  constructor(private usuarioServico: UsuarioServico) {
 
-    ngOnInit(): void {
-        this.usuario = new Usuario();
-    }
+  }
 
-    public cadastrar() {
-        alert(this.usuario.nome + " " + this.usuario.email + " " + this.usuario.senha + " " + this.usuario.sobreNome)
-        //this.usuarioServico.cadastrarUsuario(this.usuario)
-        //    .subscribe(
-        //        usuarioJson => { },
-        //        erro => {}
-        //    );
-    }
+  ngOnInit(): void {
+    this.usuario = new Usuario();
+  }
+
+  public cadastrar() {
+    this.ativar_spinner = true;
+    this.usuarioServico.cadastrarUsuario(this.usuario)
+      .subscribe(
+        usuarioJson => {
+          this.usuarioCadastrado = true;
+          this.mensagem = "";
+          this.ativar_spinner = false;
+        },
+        erro => {
+          this.mensagem = erro.error;
+          this.ativar_spinner = false;
+        }
+      );
+  }
 }

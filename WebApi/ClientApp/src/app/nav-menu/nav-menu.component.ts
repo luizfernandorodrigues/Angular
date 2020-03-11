@@ -3,28 +3,32 @@ import { Router } from '@angular/router';
 import { UsuarioServico } from '../servicos/usuario/usuario.servico';
 
 @Component({
-    selector: 'app-nav-menu',
-    templateUrl: './nav-menu.component.html',
-    styleUrls: ['./nav-menu.component.css']
+  selector: 'app-nav-menu',
+  templateUrl: './nav-menu.component.html',
+  styleUrls: ['./nav-menu.component.css']
 })
 export class NavMenuComponent {
-    isExpanded = false;
+  isExpanded = false;
 
-    constructor(private router: Router, private usuarioServico: UsuarioServico) { }
-    collapse() {
-        this.isExpanded = false;
-    }
+  get usuario() {
+    return this.usuarioServico.usuario;
+  }
 
-    toggle() {
-        this.isExpanded = !this.isExpanded;
-    }
+  constructor(private router: Router, private usuarioServico: UsuarioServico) { }
+  collapse() {
+    this.isExpanded = false;
+  }
 
-    public usuarioLogado(): boolean {
-        return this.usuarioServico.usuario_autenticado();
-    }
+  toggle() {
+    this.isExpanded = !this.isExpanded;
+  }
 
-    Sair() {
-        this.usuarioServico.limpar_sessao();
-        this.router.navigate(['/']);
-    }
+  public usuarioLogado(): boolean {
+    return this.usuarioServico.usuario_autenticado();
+  }
+
+  Sair() {
+    this.usuarioServico.limpar_sessao();
+    this.router.navigate(['/']);
+  }
 }

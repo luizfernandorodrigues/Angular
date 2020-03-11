@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Modelo.Infra.Data.Contexto;
 
 namespace Modelo.Infra.Data.Migrations
 {
     [DbContext(typeof(ApiContexto))]
-    partial class ApiContextoModelSnapshot : ModelSnapshot
+    [Migration("20200202144349_VersaoBanco_0003")]
+    partial class VersaoBanco_0003
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,20 +34,10 @@ namespace Modelo.Infra.Data.Migrations
                         .HasColumnName("Email")
                         .HasColumnType("VARCHAR(200)");
 
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnName("Nome")
-                        .HasColumnType("VARCHAR(200)");
-
                     b.Property<string>("Senha")
                         .IsRequired()
                         .HasColumnName("Senha")
                         .HasColumnType("VARCHAR(MAX)");
-
-                    b.Property<string>("SobreNome")
-                        .IsRequired()
-                        .HasColumnName("SobreNome")
-                        .HasColumnType("VARCHAR(200)");
 
                     b.Property<DateTime>("TimesTamp")
                         .ValueGeneratedOnAdd()

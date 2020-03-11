@@ -11,7 +11,7 @@ namespace Modelo.Domain.Entidades.Cadastros.Logradouro
     {
         public string CodigoEnderecamentoPostal { get; set; }
         public long Cidade_Id { get; set; }
-        public ICidade Cidade { get; set; }
+        public Cidade Cidade { get; set; }
         public long Id { get; set; }
         public DateTime TimesTamp { get; set; }
     }

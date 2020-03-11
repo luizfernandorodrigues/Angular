@@ -12,7 +12,7 @@ namespace Modelo.Domain.Entidades.Cadastros.Logradouro
         public string Nome { get; set; }
         public string CodigoIbge { get; set; }
         public long Estado_Id { get; set; }
-        public IEstado Estado { get; set; }
+        public Estado Estado { get; set; }
         public virtual ICollection<Cep> Ceps { get; set; }
         public long Id { get; set; }
         public DateTime TimesTamp { get; set; }

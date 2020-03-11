@@ -23,15 +23,21 @@ namespace WebApi.Controllers
 
 
         [HttpPost]
-        public ActionResult Post()
+        public ActionResult Post([FromBody] Usuario usuario)
         {
             try
             {
+                bool usuarioCadastrado = repositorioUsuario.VerificaUsuario(usuario.Email);
+
+                if (usuarioCadastrado)
+                    return BadRequest("Usuario já cadastrado");
+
+                repositorioUsuario.Adicionar(usuario);
+
                 return Ok();
             }
             catch (Exception ex)
             {
-
                 return BadRequest(ex.ToString());
             }
         }

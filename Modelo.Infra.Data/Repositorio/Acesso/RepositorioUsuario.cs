@@ -16,5 +16,10 @@ namespace Modelo.Infra.Data.Repositorio.Acesso
         {
             return ApiContexto.Usuario.FromSql($"SELECT TOP 1 * FROM Acesso.Usuario WHERE Email = {email} AND Senha = {senha}").FirstOrDefault();
         }
+
+        public bool VerificaUsuario(string email)
+        {
+            return ApiContexto.Usuario.FromSql($"SELECT TOP 1 * FROM Acesso.Usuario WHERE Email = {email}").Count() > 0;
+        }
     }
 }

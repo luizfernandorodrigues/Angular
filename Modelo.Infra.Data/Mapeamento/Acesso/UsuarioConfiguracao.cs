@@ -43,6 +43,16 @@ namespace Modelo.Infra.Data.Mapeamento.Acesso
                 .HasColumnType("DATETIME")
                 .HasDefaultValueSql("GETDATE()")
                 .IsRequired();
+
+            builder.Property(c => c.Nome)
+                .HasColumnName("Nome")
+                .HasColumnType("VARCHAR(200)")
+                .IsRequired(true);
+
+            builder.Property(c => c.SobreNome)
+                .HasColumnName("SobreNome")
+                .HasColumnType("VARCHAR(200)")
+                .IsRequired(true);
             
             #endregion
         }

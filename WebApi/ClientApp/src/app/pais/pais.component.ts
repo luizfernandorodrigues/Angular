@@ -19,14 +19,14 @@ export class PaisComponent implements OnInit {
     }
 
     public cadastrar() {
-        this.paisServico.cadastrar(this.pais)
-            .subscribe(
-                paisJson => {
-                    console.log(paisJson);
-                },
-                erro => {
-                    console.log(erro.error);
-                }
-            );
+        //this.paisServico.cadastrar(this.pais)
+        //    .subscribe(
+        //        paisJson => {
+        //            console.log(paisJson);
+        //        },
+        //        erro => {
+        //            console.log(erro.error);
+        //        }
+        //    );
     }
 }

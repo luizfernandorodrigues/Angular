@@ -10,7 +10,7 @@ namespace Modelo.Domain.Interfaces.Cadastros.Logradouro
         string Nome { get; set; }
         string CodigoIbge { get; set; }
         long Estado_Id { get; set; }
-        IEstado Estado { get; set; }
+        Estado Estado { get; set; }
         ICollection<Cep> Ceps { get; set; }
     }
 }

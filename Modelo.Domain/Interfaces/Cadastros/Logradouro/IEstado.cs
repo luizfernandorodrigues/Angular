@@ -8,7 +8,7 @@ namespace Modelo.Domain.Interfaces.Cadastros.Logradouro
         string Nome { get; set; }
         string Sigla { get; set; }
         long Pais_Id { get; set; }
-        IPais Pais { get; set; }
+        Pais Pais { get; set; }
         ICollection<Cidade> Cidades { get; set; }
     }
 }

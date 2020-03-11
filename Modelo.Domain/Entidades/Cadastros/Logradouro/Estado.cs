@@ -13,7 +13,7 @@ namespace Modelo.Domain.Entidades.Cadastros.Logradouro
         public string Nome { get; set; }
         public string Sigla { get; set; }
         public long Pais_Id { get; set; }
-        public IPais Pais { get; set; }
+        public Pais Pais { get; set; }
         public virtual ICollection<Cidade> Cidades { get; set; }
         public long Id { get; set; }
         public DateTime TimesTamp { get; set; }

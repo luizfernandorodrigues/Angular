@@ -23,5 +23,16 @@ namespace Modelo.Domain.Interfaces.Repositorios.Acesso
         /// Data    :26/01/2020
         /// </remarks>
         Usuario Login(string senha, string email);
+        
+        /// <summary>
+        /// Retorna true caso o usuário exista na base atraves da busca peplo e-mail
+        /// </summary>
+        /// <param name="email">Email do usuario para verificar</param>
+        /// <returns>Retorna verdadeiro caso o usuario exista na base de dados</returns>
+        /// <remarks>
+        /// Autor   :Luiz Fernando
+        /// Data    :02/02/2020
+        /// </remarks>
+        bool VerificaUsuario(string email);
     }
 }

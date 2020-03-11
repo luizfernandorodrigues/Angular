@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Modelo.Infra.Data.Contexto;
 
 namespace Modelo.Infra.Data.Migrations
 {
     [DbContext(typeof(ApiContexto))]
-    partial class ApiContextoModelSnapshot : ModelSnapshot
+    [Migration("20200202161843_VersaoBanco_0004")]
+    partial class VersaoBanco_0004
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

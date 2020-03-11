@@ -1,10 +1,42 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+<h1 class="h4">Cadastro de Pais</h1>
+<label for="inputNome" class="sr-only">Nome</label>
+<input type="text"
+       id="inputNome"
+       name="nomePais"
+       placeholder="Nome do Pais"
+       class="form-control mb-2 col-md-4"
+       [ngClass]=""
+       [(ngModel)]="pais.nome"
+       #nome="ngModel"
+       required />
+<div class="invalid-feedback mb-2" *ngIf="nome.invalid && (nome.dirty || nome.touched)">
+  <div *ngIf="nome.errors.required">
+    Nome do pais é obrigatório
+  </div>
+</div>
+<label for="inputCodigo" class="sr-only">Código</label>
+<input type="text"
+       id="inputCodigo"
+       name="codigoPais"
+       placeholder="Código do Pais"
+       class="form-control mb-2 col-md-4"
+       [ngClass]=""
+       [(ngModel)]="pais.codigo"
+       #codigo="ngModel"
+       required />
+<div class="invalid-feedback mb-2" *ngIf="codigo.invalid && (codigo.dirty || codigo.touched)">
+  <div *ngIf="codigo.errors.required">
+    Código do pais é obrigatório
+  </div>
+</div>
+<label for="inputObservacao" class="sr-only">Observações</label>
+<textarea wrap="hard"
+          id="inputObservacao"
+          name="observacaoPais"
+          placeholder="Observações"
+          class="form-control mb-2 col-md-4"
+          [ngClass]=""
+          [(ngModel)]="pais.observacao"
+          #observacao="ngModel">
+</textarea>
+<button class="btn btn-primary" (click)="cadastrar()">Salvar</button>

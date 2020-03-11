@@ -29,13 +29,13 @@ namespace Modelo.Infra.Data.Mapeamento.Cadastro.Logradouro
             builder.Property(p => p.Nome)
                 .HasColumnName("Nome")
                 .HasColumnType("VARCHAR(200)")
-                .IsRequired();
+                .IsRequired(true);
             //codigo
             builder.Property(p => p.Codigo)
                 .HasColumnName("Codigo")
                 .HasColumnType("VARCHAR(10)")
                 .HasDefaultValue("")
-                .IsRequired(false);
+                .IsRequired(true);
             //observaçoes
             builder.Property(p => p.Observacao)
                 .HasColumnName("Observacoes")
@@ -48,7 +48,7 @@ namespace Modelo.Infra.Data.Mapeamento.Cadastro.Logradouro
                 .HasColumnType("DATETIME")
                 .HasDefaultValueSql("GETDATE()")
                 .ValueGeneratedOnAddOrUpdate()
-                .IsRequired();
+                .IsRequired(true);
             #endregion
 
         }
