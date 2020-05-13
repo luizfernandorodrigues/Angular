@@ -52,9 +52,8 @@ namespace Modelo.Infra.Data.Repositorio
         public IEnumerable<TEntity> ObterTudo(Expression<Func<TEntity, bool>> predicado = null)
         {
             if (predicado != null)
-            {
                 return ApiContexto.Set<TEntity>().Where(predicado);
-            }
+
             return ApiContexto.Set<TEntity>().AsEnumerable();
         }
 

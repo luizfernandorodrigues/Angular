@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Modelo.Domain.Interfaces.Acesso
+﻿namespace Modelo.Domain.Interfaces.Acesso
 {
     public interface IUsuario : IEntidade
     {

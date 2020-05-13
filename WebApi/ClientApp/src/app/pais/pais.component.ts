@@ -8,7 +8,9 @@ import { PaisServico } from "../servicos/cadastro/logradouro/pais.servico";
     styleUrls: ['./pais.component.css']
 })
 export class PaisComponent implements OnInit {
-    public pais: Pais;
+  public pais: Pais;
+  public mensagem: string;
+
 
     constructor(private paisServico: PaisServico) {
 
@@ -19,14 +21,14 @@ export class PaisComponent implements OnInit {
     }
 
     public cadastrar() {
-        //this.paisServico.cadastrar(this.pais)
-        //    .subscribe(
-        //        paisJson => {
-        //            console.log(paisJson);
-        //        },
-        //        erro => {
-        //            console.log(erro.error);
-        //        }
-        //    );
+        this.paisServico.cadastrar(this.pais)
+            .subscribe(
+                paisJson => {
+                    console.log(paisJson);
+                },
+                erro => {
+                    console.log(erro.error);
+                }
+            );
     }
 }

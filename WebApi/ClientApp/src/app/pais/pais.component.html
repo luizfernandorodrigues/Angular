@@ -5,7 +5,10 @@
        name="nomePais"
        placeholder="Nome do Pais"
        class="form-control mb-2 col-md-4"
-       [ngClass]=""
+       [ngClass]="{
+       'is-invalid' : nome.invalid && (nome.dirty || nome.touched),
+       'is-valid' : nome.valid && (nome.dirty || nome.touched)
+       }"
        [(ngModel)]="pais.nome"
        #nome="ngModel"
        required />
@@ -20,7 +23,10 @@
        name="codigoPais"
        placeholder="Código do Pais"
        class="form-control mb-2 col-md-4"
-       [ngClass]=""
+       [ngClass]="{
+       'is-invalid' : codigo.invalid && (codigo.dirty || codigo.touched),
+       'is-valid' : codigo.valid && (codigo.dirty || codigo.touched)
+       }"
        [(ngModel)]="pais.codigo"
        #codigo="ngModel"
        required />
@@ -40,3 +46,6 @@
           #observacao="ngModel">
 </textarea>
 <button class="btn btn-primary" (click)="cadastrar()">Salvar</button>
+<div class="alert alert-danger col-md-4" *ngIf="mensagem">
+  {{mensagem}}
+</div>

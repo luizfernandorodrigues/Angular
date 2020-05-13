@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Modelo.Domain.Entidades.Cadastros.Logradouro;
 using Modelo.Domain.Interfaces.Repositorios.Cadastros.Logradouro;
+using Modelo.Infra.CrossCutting;
 using System;
 using System.IO;
 using System.Linq;
@@ -48,12 +49,17 @@ namespace WebApi.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPost("cadastrar")]
         public IActionResult Post([FromBody] Pais pais)
         {
             try
             {
-                _paisRepositorio.Atualizar(pais);
+                
+
+
+                if (!pais.ValidarPais())
+                    _paisRepositorio.Adicionar(pais);
+                
                 return Created("/api/pais", pais);
             }
             catch (Exception ex)
