@@ -66,6 +66,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Controllers\v1\Controllers\" />
     <Folder Include="wwwroot\arquivos\" />
   </ItemGroup>
 

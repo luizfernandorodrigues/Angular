@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Modelo.Domain.Entidades.Cadastros.Logradouro;
 using Modelo.Domain.Interfaces.Repositorios.Cadastros.Logradouro;
-using Modelo.Infra.CrossCutting;
 using System;
 using System.IO;
 using System.Linq;
@@ -54,12 +53,12 @@ namespace WebApi.Controllers
         {
             try
             {
-                
+
 
 
                 if (!pais.ValidarPais())
                     _paisRepositorio.Adicionar(pais);
-                
+
                 return Created("/api/pais", pais);
             }
             catch (Exception ex)
