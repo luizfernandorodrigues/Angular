@@ -10,7 +10,7 @@
 
     <!-- Set this to true if you enable server-side prerendering -->
     <BuildServerSideRenderer>false</BuildServerSideRenderer>
-    <AssemblyVersion>1.2020.5.13</AssemblyVersion>
+    <AssemblyVersion>1.2020.6.21</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -34,6 +34,7 @@
     <None Remove="ClientApp\src\app\modelo\IEntidade.ts" />
     <None Remove="ClientApp\src\app\modelo\usuario\usuario.ts" />
     <None Remove="ClientApp\src\app\pais\pais.component.ts" />
+    <None Remove="ClientApp\src\app\pais\pesquisa\pesquisa.pais.component.ts" />
     <None Remove="ClientApp\src\app\servicos\base.servico.ts" />
     <None Remove="ClientApp\src\app\servicos\cadastro\logradouro\pais.servico.ts" />
     <None Remove="ClientApp\src\app\servicos\usuario\usuario.servico.ts" />
@@ -52,6 +53,7 @@
     <TypeScriptCompile Include="ClientApp\src\app\modelo\IEntidade.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\modelo\usuario\usuario.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\pais\pais.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\pais\pesquisa\pesquisa.pais.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\servicos\base.servico.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\servicos\cadastro\logradouro\pais.servico.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\servicos\usuario\usuario.servico.ts" />
