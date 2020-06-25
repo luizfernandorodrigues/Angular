@@ -30,7 +30,8 @@
     "jquery": "3.3.1",
     "popper.js": "^1.14.3",
     "rxjs": "^6.5.2",
-    "zone.js": "^0.9.1"
+    "zone.js": "^0.9.1",
+    "https-proxy-agent": " > = 2.2.3 "
   },
   "devDependencies": {
     "@angular/cli": "^8.1.3",
